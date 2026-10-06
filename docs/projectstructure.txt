@@ -1,0 +1,82 @@
+ library-management-api/
+│
+├── app/
+│   ├── __init__.py                          # Makes app a Python package
+│   │
+│   ├── main.py                              # FastAPI application entry point, router registration, middleware setup
+│   │
+│   ├── routers/
+│   │   ├── __init__.py                      # Routers package initializer
+│   │   ├── book_router.py                   # Book-related endpoints (CRUD operations)
+│   │   ├── member_router.py                 # Member-related endpoints (CRUD operations)
+│   │   └── loan_router.py                   # Loan-related endpoints (issue, return, history)
+│   │
+│   ├── services/
+│   │   ├── __init__.py                      # Services package initializer
+│   │   ├── book_service.py                  # Business logic for book operations
+│   │   ├── member_service.py                # Business logic for member operations
+│   │   └── loan_service.py                  # Business logic for loan operations (validation, availability checks)
+│   │
+│   ├── repositories/
+│   │   ├── __init__.py                      # Repositories package initializer
+│   │   ├── book_repository.py               # Database operations for Book entity
+│   │   ├── member_repository.py             # Database operations for Member entity
+│   │   └── loan_repository.py               # Database operations for Loan entity
+│   │
+│   ├── models/
+│   │   ├── __init__.py                      # Models package initializer
+│   │   ├── book.py                          # SQLAlchemy Book entity/model
+│   │   ├── member.py                        # SQLAlchemy Member entity/model
+│   │   └── loan.py                          # SQLAlchemy Loan entity/model
+│   │
+│   ├── schemas/
+│   │   ├── __init__.py                      # Schemas package initializer
+│   │   │
+│   │   ├── request/
+│   │   │   ├── __init__.py                  # Request schemas package initializer
+│   │   │   ├── book_request.py              # Pydantic request schema for Book (create, update)
+│   │   │   ├── member_request.py            # Pydantic request schema for Member (create, update)
+│   │   │   └── loan_request.py              # Pydantic request schema for Loan (issue, return)
+│   │   │
+│   │   └── response/
+│   │       ├── __init__.py                  # Response schemas package initializer
+│   │       ├── book_response.py             # Pydantic response schema for Book
+│   │       ├── member_response.py           # Pydantic response schema for Member
+│   │       └── loan_response.py             # Pydantic response schema for Loan
+│   │
+│   ├── exceptions/
+│   │   ├── __init__.py                      # Exceptions package initializer
+│   │   ├── base_exception.py                # Base custom exception class
+│   │   ├── duplicate_resource_exception.py  # Exception for duplicate resources (e.g., ISBN, email)
+│   │   ├── not_found_exception.py           # Exception for resource not found
+│   │   ├── validation_exception.py          # Exception for business validation failures
+│   │   └── exception_handlers.py            # Global exception handlers for FastAPI
+│   │
+│   ├── config/
+│   │   ├── __init__.py                      # Config package initializer
+│   │   ├── settings.py                      # Application settings using Pydantic Settings (DB, API config)
+│   │   └── logging_config.py                # Logging configuration
+│   │
+│   └── database/
+│       ├── __init__.py                      # Database package initializer
+│       ├── session.py                       # SQLAlchemy engine, session factory, and dependency injection
+│       └── base.py                          # Declarative base for SQLAlchemy models
+│
+├── tests/
+│   ├── __init__.py                          # Tests package initializer
+│   ├── conftest.py                          # Pytest fixtures and test configuration
+│   ├── test_book_service.py                 # Unit tests for book service layer
+│   ├── test_member_service.py               # Unit tests for member service layer
+│   ├── test_loan_service.py                 # Unit tests for loan service layer
+│   ├── test_book_router.py                  # Integration tests for book endpoints
+│   ├── test_member_router.py                # Integration tests for member endpoints
+│   └── test_loan_router.py                  # Integration tests for loan endpoints
+│
+├── docs/
+│   └── api-contract.md                      # REST API contract documentation
+│
+├── .env.example                             # Example environment variables file
+├── .gitignore                               # Git ignore file
+├── requirements.txt                         # Python dependencies
+├── pyproject.toml                           # Project metadata and tool configuration (optional)
+└── README.md                                # Project overview and setup instructions
