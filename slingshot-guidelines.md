@@ -1,0 +1,14 @@
+  Slingshot Team Guidelines
+  - Use Python type hints for all function parameters and return values
+  - Use Pydantic schemas for all API request and response models
+  - Keep business logic in the service layer; routers should only handle HTTP concerns
+  - Never return SQLAlchemy entities directly from API endpoints — always return response schemas
+  - Custom exceptions must inherit from Exception and include meaningful error messages
+  - All service methods must include Python docstrings with Args, Returns, and Raises sections
+  - Use dependency injection for database sessions in FastAPI routes and services
+  - Follow FastAPI and SQLAlchemy best practices for validation, error handling, and data access
+  - React components must use functional components with TypeScript interfaces for all props
+  - API calls must handle loading, success, and error states explicitly
+  - Use fetch() with proper error handling and strongly typed request/response models
+  - Avoid duplicated business logic across routers, services, and repositories
+  - Write Pytest unit tests for service-layer business logic

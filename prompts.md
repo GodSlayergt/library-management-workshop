@@ -211,3 +211,12 @@ https://www.publicissapient.com/resources/demos/pattern-iq
 https://www.publicissapient.com/resources/demos/lead-failure
 
 
+## FrontEnd prompt
+The React component AddBookForm.tsx needs to POST to the FastAPI backend at http://localhost:8000/api/books.
+
+The request body must include: isbn (string, required), title (string, required), author (string, required), genre (string, optional), totalCopies (number, required, min 1).
+
+On success (201), show a success message "Book added successfully" and reset the form. On 400, display field-level validation errors from the API response.
+
+On 409, show "A book with this ISBN already exists." Add TypeScript types for the request/response. Use fetch() — no external HTTP library. 
+ 

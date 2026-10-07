@@ -1,0 +1,352 @@
+/* Ancient Library Theme - Evoking rare manuscripts and classical book catalogs */
+
+.add-book-form-container {
+  max-width: 680px;
+  margin: 3rem auto;
+  padding: 3rem 2.5rem;
+  background: linear-gradient(to bottom, #F4ECD8 0%, #EDE4D0 100%);
+  border: 3px double #8B4513;
+  box-shadow: 
+    0 0 0 1px #D4AF37,
+    0 8px 16px rgba(43, 24, 16, 0.15),
+    inset 0 0 60px rgba(212, 175, 55, 0.03);
+  position: relative;
+}
+
+/* Corner ornaments */
+.add-book-form-container::before,
+.add-book-form-container::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #D4AF37;
+}
+
+.add-book-form-container::before {
+  top: -2px;
+  left: -2px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.add-book-form-container::after {
+  bottom: -2px;
+  right: -2px;
+  border-left: none;
+  border-top: none;
+}
+
+.add-book-form-container h2 {
+  margin: 0 0 0.5rem 0;
+  color: #2B1810;
+  font-family: 'Playfair Display', 'Georgia', 'Garamond', serif;
+  font-size: 2.25rem;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 0 rgba(212, 175, 55, 0.3);
+}
+
+.add-book-form-container h2::after {
+  content: '';
+  display: block;
+  width: 120px;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #D4AF37, transparent);
+  margin: 1rem auto 0;
+}
+
+.catalog-subtitle {
+  text-align: center;
+  color: #8B4513;
+  font-family: 'EB Garamond', 'Georgia', serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  margin-bottom: 2rem;
+  letter-spacing: 0.3px;
+}
+
+/* Alert Messages */
+.alert {
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2rem;
+  border: 2px solid;
+  font-family: 'EB Garamond', 'Georgia', serif;
+  font-size: 1rem;
+  position: relative;
+  background-size: 100% 100%;
+}
+
+.alert::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(74, 55, 40, 0.01) 2px,
+      rgba(74, 55, 40, 0.01) 4px
+    );
+  pointer-events: none;
+}
+
+.alert-success {
+  background-color: #E8F5E9;
+  color: #2B5329;
+  border-color: #66BB6A;
+  box-shadow: inset 0 0 20px rgba(102, 187, 106, 0.1);
+}
+
+.alert-success::before {
+  content: '✓';
+  position: absolute;
+  left: 1rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #66BB6A;
+}
+
+.alert-error {
+  background-color: #FFEBEE;
+  color: #7B2828;
+  border-color: #C62828;
+  box-shadow: inset 0 0 20px rgba(198, 40, 40, 0.1);
+}
+
+.alert-error::before {
+  content: '⚠';
+  position: absolute;
+  left: 1rem;
+  font-size: 1.25rem;
+  color: #C62828;
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: 1.75rem;
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.625rem;
+  color: #4A3728;
+  font-family: 'EB Garamond', 'Georgia', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.required {
+  color: #8B4513;
+  margin-left: 0.25rem;
+  font-weight: normal;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 2px solid #C19A6B;
+  background: #FEFDFB;
+  color: #4A3728;
+  font-family: 'EB Garamond', 'Georgia', serif;
+  font-size: 1.05rem;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 2px 4px rgba(74, 55, 40, 0.05);
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #D4AF37;
+  background: #FFFFFF;
+  box-shadow: 
+    inset 0 2px 4px rgba(74, 55, 40, 0.05),
+    0 0 0 3px rgba(212, 175, 55, 0.15);
+}
+
+.form-group input:disabled {
+  background-color: #EDE4D0;
+  cursor: not-allowed;
+  opacity: 0.6;
+  color: #8B7355;
+}
+
+.form-group input::placeholder {
+  color: #A58968;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+/* Input Error State */
+.input-error {
+  border-color: #C62828 !important;
+  background-color: #FFF9F9 !important;
+}
+
+.input-error:focus {
+  box-shadow: 
+    inset 0 2px 4px rgba(198, 40, 40, 0.1),
+    0 0 0 3px rgba(198, 40, 40, 0.15) !important;
+}
+
+.error-message {
+  display: block;
+  margin-top: 0.5rem;
+  color: #C62828;
+  font-family: 'EB Garamond', 'Georgia', serif;
+  font-size: 0.925rem;
+  font-style: italic;
+}
+
+/* Form Actions */
+.form-actions {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid #D4AF37;
+  justify-content: center;
+}
+
+.btn {
+  padding: 0.875rem 2.5rem;
+  border: 2px solid;
+  font-family: 'EB Garamond', 'Georgia', serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover:not(:disabled)::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.btn-primary {
+  background: linear-gradient(to bottom, #8B4513, #6B3410);
+  color: #F4ECD8;
+  border-color: #D4AF37;
+  box-shadow: 
+    0 4px 6px rgba(43, 24, 16, 0.2),
+    inset 0 1px 0 rgba(212, 175, 55, 0.3);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: linear-gradient(to bottom, #6B3410, #8B4513);
+  border-color: #FFD700;
+  box-shadow: 
+    0 6px 12px rgba(43, 24, 16, 0.3),
+    inset 0 1px 0 rgba(212, 175, 55, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: #F4ECD8;
+  color: #4A3728;
+  border-color: #C19A6B;
+  box-shadow: 0 2px 4px rgba(43, 24, 16, 0.1);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: #EDE4D0;
+  border-color: #8B4513;
+  box-shadow: 0 4px 8px rgba(43, 24, 16, 0.15);
+  transform: translateY(-1px);
+}
+
+/* Number Input */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  opacity: 1;
+  height: 30px;
+}
+
+/* Decorative elements */
+.form-group:first-of-type::before {
+  content: '❦';
+  position: absolute;
+  top: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #D4AF37;
+  font-size: 1.5rem;
+  opacity: 0.4;
+}
+
+/* Paper texture overlay */
+@media screen {
+  .add-book-form-container {
+    background-image:
+      linear-gradient(to bottom, #F4ECD8 0%, #EDE4D0 100%),
+      url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" /></filter><rect width="100" height="100" filter="url(%23noise)" opacity="0.03" /></svg>');
+    background-blend-mode: normal, multiply;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .add-book-form-container {
+    margin: 1.5rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .add-book-form-container h2 {
+    font-size: 1.75rem;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .add-book-form-container::before,
+  .add-book-form-container::after {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .add-book-form-container {
+    border: 3px double #000;
+    box-shadow: none;
+    background: #FFF;
+  }
+
+  .btn {
+    display: none;
+  }
+}
