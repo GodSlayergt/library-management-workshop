@@ -1,0 +1,96 @@
+# Python virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Testing and coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Git files
+.git/
+.gitignore
+.gitattributes
+
+# Node.js (frontend dependencies)
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Frontend build artifacts
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Environment files (sensitive data)
+.env
+.env.local
+.env.*.local
+
+# Database files (built inside container)
+*.db
+*.sqlite
+*.sqlite3
+library.db
+
+# Logs
+*.log
+logs/
+app.log
+
+# Documentation
+*.md
+README.md
+DOCS.md
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+.travis.yml
+
+# Docker files (avoid recursion)
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Tests
+tests/
+*.test.py
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Data directories
+data/
+
+# Static files (if any)
+static/
+media/

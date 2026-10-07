@@ -1,0 +1,195 @@
+/* Ancient Library Theme - Main Application Styles */
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: 
+    linear-gradient(to bottom, #2B1810 0%, #3D2415 100%),
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><rect width="200" height="200" fill="%232B1810"/><g fill="%23000" opacity="0.2"><rect x="0" y="0" width="100" height="100"/><rect x="100" y="100" width="100" height="100"/></g></svg>');
+  background-size: cover, 40px 40px;
+}
+
+/* Header - Evokes library entrance with classical architecture */
+.App-header {
+  background: linear-gradient(to bottom, #1A0F08 0%, #2B1810 100%);
+  color: #F4ECD8;
+  padding: 2.5rem 2rem 2rem;
+  text-align: center;
+  border-bottom: 3px solid #D4AF37;
+  box-shadow: 
+    0 2px 0 #8B4513,
+    0 4px 8px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.App-header::before {
+  content: '❦  ✿  ❦';
+  display: block;
+  color: #D4AF37;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  opacity: 0.6;
+  letter-spacing: 1rem;
+}
+
+.App-header h1 {
+  margin: 0 0 0.75rem 0;
+  font-family: 'Playfair Display', 'Georgia', 'Garamond', serif;
+  font-size: 2.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-shadow: 
+    2px 2px 4px rgba(0, 0, 0, 0.5),
+    0 0 20px rgba(212, 175, 55, 0.3);
+  color: #F4ECD8;
+}
+
+.App-header h1::first-letter {
+  color: #D4AF37;
+  font-size: 1.3em;
+}
+
+.App-header p {
+  margin: 0 0 2rem 0;
+  font-family: 'EB Garamond', 'Georgia', serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  opacity: 0.9;
+  letter-spacing: 0.5px;
+  color: #C19A6B;
+}
+
+/* Navigation */
+.main-navigation {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.nav-btn {
+  padding: 0.875rem 2rem;
+  border: 2px solid #C19A6B;
+  background: rgba(244, 236, 216, 0.1);
+  color: #F4ECD8;
+  font-family: 'EB Garamond', 'Georgia', serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(212, 175, 55, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.nav-btn:hover:not(.active)::before {
+  width: 300px;
+  height: 300px;
+}
+
+.nav-btn:hover:not(.active) {
+  border-color: #D4AF37;
+  background: rgba(212, 175, 55, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(212, 175, 55, 0.3);
+}
+
+.nav-btn.active {
+  background: linear-gradient(to bottom, #8B4513, #6B3410);
+  border-color: #D4AF37;
+  color: #F4ECD8;
+  box-shadow: 
+    0 4px 6px rgba(43, 24, 16, 0.3),
+    inset 0 1px 0 rgba(212, 175, 55, 0.3),
+    inset 0 0 20px rgba(212, 175, 55, 0.1);
+}
+
+/* Main content area */
+main {
+  flex: 1;
+  padding: 2rem 1rem;
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(212, 175, 55, 0.02) 2px,
+      rgba(212, 175, 55, 0.02) 4px
+    );
+}
+
+/* Footer - Classical closing */
+.App-footer {
+  background: linear-gradient(to top, #1A0F08 0%, #2B1810 100%);
+  color: #C19A6B;
+  padding: 1.5rem;
+  text-align: center;
+  border-top: 3px solid #D4AF37;
+  box-shadow: 
+    0 -2px 0 #8B4513,
+    0 -4px 8px rgba(0, 0, 0, 0.5);
+  font-family: 'EB Garamond', 'Georgia', serif;
+  font-size: 0.95rem;
+  position: relative;
+}
+
+.App-footer::before {
+  content: '❦';
+  display: block;
+  color: #D4AF37;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.5;
+}
+
+.App-footer p {
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .App-header {
+    padding: 2rem 1rem 1.5rem;
+  }
+
+  .App-header h1 {
+    font-size: 2rem;
+  }
+
+  .App-header p {
+    font-size: 1rem;
+  }
+
+  .main-navigation {
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .nav-btn {
+    width: 100%;
+  }
+
+  main {
+    padding: 1.5rem 0.5rem;
+  }
+}

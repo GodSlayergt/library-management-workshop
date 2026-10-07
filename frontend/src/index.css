@@ -1,0 +1,62 @@
+/* Base styles for Ancient Library theme */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'EB Garamond', Georgia, 'Times New Roman', serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #4A3728;
+  background-color: #2B1810;
+  line-height: 1.6;
+}
+
+code {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #F4ECD8;
+  padding: 0.125rem 0.25rem;
+  border-radius: 2px;
+  font-size: 0.9em;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Custom scrollbar for ancient library theme */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #2B1810;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8B4513;
+  border: 2px solid #2B1810;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
+}
+
+/* Selection color */
+::selection {
+  background-color: #D4AF37;
+  color: #2B1810;
+}
+
+::-moz-selection {
+  background-color: #D4AF37;
+  color: #2B1810;
+}
