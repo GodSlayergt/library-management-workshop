@@ -1,0 +1,64 @@
+# Docker Compose configuration for Library Management System
+# Starts the FastAPI application with SQLite database volume mapping
+
+version: '3.8'
+
+services:
+  # FastAPI Application Service
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    
+    container_name: library-api
+    
+    # Expose port 8000 and map to host port 8000
+    ports:
+      - "8000:8000"
+    
+    # Environment variables (can be overridden with .env file)
+    environment:
+      - ENVIRONMENT=production
+      - DEBUG=False
+      - DATABASE_URL=sqlite:///./data/library.db
+      - PROJECT_NAME=Library Management System - Book API
+      - VERSION=1.0.0
+      - CORS_ORIGINS=["http://localhost:3000","http://localhost:8080"]
+    
+    # Volume mapping for SQLite database persistence
+    volumes:
+      # Map the database directory to host for data persistence
+      - ./data:/app/data
+      # Map logs directory for application logs
+      - ./logs:/app/logs
+    
+    # Restart policy
+    restart: unless-stopped
+    
+    # Health check configuration
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    
+    # Network configuration
+    networks:
+      - library-network
+
+# Named volumes (optional, for explicit volume management)
+volumes:
+  # SQLite database volume
+  library-data:
+    driver: local
+  
+  # Application logs volume
+  library-logs:
+    driver: local
+
+# Network configuration
+networks:
+  library-network:
+    driver: bridge
+    name: library-network
